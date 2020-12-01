@@ -1,0 +1,283 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <title>Calculator</title>
+
+        <style>
+
+            .input-group {
+
+                margin-bottom: 2%;
+
+            }
+
+            .input-group-addon {
+
+                margin-right: 2%;
+
+                margin-top: 1%;
+
+            }
+
+            /* .btn {
+                
+                border-radius: 4px;
+
+                background-color: black;
+
+                border: none;
+
+                color:white;
+
+                text-align: center;
+
+                font-size: 28px;
+
+                 padding: 20px; 
+
+                width: 200px;
+
+                transition: all 0.5s;
+
+                cursor: pointer;
+                
+                margin: 5px;
+
+            }
+
+            .btn span {
+
+                cursor: pointer;
+
+                display: inline-block;
+
+                position: relative;
+
+                transition: 0.5s;
+                
+            }
+
+            .btn span:after {
+
+                content: '\00bb';
+
+                position: absolute;
+
+                opacity: 0;
+
+                top: 0;
+
+                right: -20px;
+
+                transition: 0.5s;
+
+            }
+
+            .btn:hover span {
+
+                padding-right: 25px;
+
+            }
+
+            .btn:hover span:after {
+
+                opacity: 1;
+            
+                right: 0;
+
+            } */
+
+            #loading, #results {
+
+                display:none;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="row-md-6 mx-auto">
+
+                <div class="col-md-6 mx-auto">
+
+                    <div class="card card-body text-center mt-5">
+
+                        <h1 class="heading display-5 pb-3">Loan Calculator</h1>
+
+                        <form id="loan-form">
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"> <i class="fa fa-percent" style="font-size:24px"> </i> </span>
+    
+                                    <input type="number" class="form-control text-center interset" id="interset" placeholder="INTERSET">
+    
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"> <i class="fa fa-money" style="font-size:24px"> </i> </span>
+    
+                                    <input type="number" class="form-control text-center amount" id="amount" placeholder="AMOUNT">
+    
+                                </div>
+                                
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"> <i class="fa fa-clock-o" style="font-size:24px"> </i> </span>
+    
+                                    <input type="number" class="form-control text-center time" id="years" placeholder="TIME">
+    
+                                </div>  
+
+                            </div>
+
+                            <div class="forn-group">
+
+                                <input type="submit" value="Calculate" class="btn btn-dark btn-block">
+
+                            </div>
+
+                        </form>
+
+                        <div id="loading">
+
+                            <img src="img/loading.gif" alt="">
+
+                        </div>
+                        
+                        <div id="results" class="pt-4">
+
+                            <h5>RESULTS</h5>
+
+                            <div class="form-group ">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"> <i class="fa fa-check-circle" style="font-size:24px"> </i> </span>
+
+                                    <input type="number" class="form-control " id="monthly-payment"  disabled>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group ">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"> <i class="fa fa-cubes" style="font-size:18px"> </i> </span>
+
+                                    <input type="number" class="form-control " id="total-payment"  disabled>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"> <i class="fa fa-calendar-times-o" style="font-size:24px"> </i> </span>
+
+                                    <input type="number" class="form-control" id="total-interest"  disabled>
+
+                                </div>
+
+                            </div>
+
+                        </div> 
+
+                        <!-- <div id="results" class="pt-4">
+
+                            <h5>Results</h5>
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon">Monthly Payment</span>
+
+                                    <input type="number" class="form-control" id="monthly-payment" disabled>
+
+                                </div>
+
+                            </div>
+                            
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon">Total Payment</span>
+
+                                    <input type="number" class="form-control" id="total-payment" disabled>
+
+                                </div>
+
+                            </div>
+              
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon">Total Interest</span>
+
+                                    <input type="number" class="form-control" id="total-interest" disabled>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+ -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        <script src="app.js"></script>
+
+    </body>
+
+</html>
