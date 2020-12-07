@@ -63,15 +63,17 @@ $text-color: $orange;
 	position: relative;
     border: 5px solid $text-color;
 	padding: 15px;
-	
+	color: red;
 	background: $body-color;
-	::-webkit-validation-bubble-text-block
-	color: green;
+	color: black;
+	font-size: 50px;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: yellow;
 	font-size: 50px;
 	text-transform: uppercase;
 	font-weight: 700;
 	width: 100%;
-	font-family: "garamond,serif";
+	font-family: "Courier";
 	cursor: pointer;
 	letter-spacing: 0.0625rem;
 	transition: all 250ms ease;
