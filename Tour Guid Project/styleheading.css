@@ -1,0 +1,91 @@
+@font-face {
+	font-family: "Haikyuu";
+	src: url("https://assets.codepen.io/209981/HaikyuuWithBallGX.ttf");
+}
+$orange: #e46f29;
+html,
+body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background-image: url("https://images.wallpaperscraft.com/image/travel_map_compass_123078_3840x2400.jpg");
+	background-size: cover;
+	background-color: $orange;
+	background-blend-mode: color-dodge;
+}
+
+h1 {
+	font-family: Haikyuu;
+	text-transform: uppercase;
+	font-size: 15vw;
+	font-weight: 100;
+	transform: rotate(-10deg);
+	letter-spacing: -0.2rem;
+	-webkit-text-fill-color: black;
+	-webkit-text-stroke-width: 4px;
+	-webkit-text-stroke-color: orange;
+}
+
+.animation h1 {
+	animation: fight 1.5s forwards ease-in-out;
+}
+
+@keyframes fight {
+	0% {
+		font-variation-settings: "wght" 100;
+	}
+
+	100% {
+		font-variation-settings: "wght" 700;
+	}
+}
+
+// Toggle Button for animation
+$body-color: black;
+$text-color: $orange;
+
+.controls {
+	position: absoute;
+	bottom: 15px;
+    left: 50%;
+    padding-top: 45px;
+	transform: translateX(-50%);
+	width: 190px;
+	z-index: 100;
+	display: block;
+}
+
+.button {
+	position: relative;
+    border: 5px solid $text-color;
+	padding: 15px;
+	
+	background: $body-color;
+	::-webkit-validation-bubble-text-block
+	color: green;
+	font-size: 50px;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 100%;
+	font-family: "garamond,serif";
+	cursor: pointer;
+	letter-spacing: 0.0625rem;
+	transition: all 250ms ease;
+
+	&:hover {
+		background: $orange;
+		color: black;
+		text-decoration: black wavy underline;
+	}
+
+	&:focus {
+		transform: translate(0, 5px);
+		background: black;
+		color: $orange;
+		outline: none;
+	}
+}
