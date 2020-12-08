@@ -1,93 +1,562 @@
-@font-face {
-	font-family: "Haikyuu";
-	src: url("https://assets.codepen.io/209981/HaikyuuWithBallGX.ttf");
-}
-$orange: #e46f29;
-html,
-body {
-	height: 100%;
-}
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(//daneden.github.io/animate.css/animate.min.css);
+@import url(https://jaruwat.pohong.me/theme/default/css/bubbles.css);
 
 body {
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	background-image: url("https://images.wallpaperscraft.com/image/travel_map_compass_123078_3840x2400.jpg");
-	background-size: cover;
-	background-color: $orange;
-	background-blend-mode: color-dodge;
+  margin: 0;  
+  line-height: 1.5;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: left;
+  font-weight: 300;
+  color: white;
+  background-image: url("https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80");
+   -webkit-animation: op 3s; 
+  -moz-animation: op 3s; /* Firefox */
+  -ms-animation: op 3s; /* Internet Explorer */
+  -o-animation: op 3s; /* Opera */
+  animation: op 3s;
 }
 
-h1 {
-	font-family: Haikyuu;
-	text-transform: uppercase;
-	font-size: 15vw;
-	font-weight: 100;
-	transform: rotate(-10deg);
-	letter-spacing: -0.2rem;
-	-webkit-text-fill-color: black;
-	-webkit-text-stroke-width: 4px;
-	-webkit-text-stroke-color: orange;
+.bg {  
+  -webkit-animation: bg-fadein 20s; /* Safari and Chrome */
+  -moz-animation: bg-fadein 20s; /* Firefox */
+  -ms-animation: bg-fadein 20s; /* Internet Explorer */
+  -o-animation: bg-fadein 20s; /* Opera */
+  animation: bg-fadein 20s;
+  opacity: 0.5;
+  content: "";
+  background: url(https://lanangindonesia.com/admin/sliderArticle/ciletuh1.jpg);  
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(10px);
 }
 
-.animation h1 {
-	animation: fight 1.5s forwards ease-in-out;
+.container {
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -moz-animation: fadein 2s; /* Firefox */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera */
+  animation: fadein 2s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 5px;
+  border-radius: 5px;
+  width: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: 2000;
 }
 
-@keyframes fight {
-	0% {
-		font-variation-settings: "wght" 100;
+.container a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 50px;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-put;
+  font-weight: 500;
+  -webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: rgb(155, 155, 104);
+    -webkit-transition-duration: 0.25s;
+  margin-top: 0;
+  margin-bottom: 0;
+  
+}
+
+.container a:hover {
+  text-shadow: 2px 2px 4px #10707f;
+}
+
+.container hr{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0, 0.2);
+}
+
+.container input {
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 80%;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  font-size: 18px;
+  color: white;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  font-weight: 300;
+  text-indent: 0px;
+  }
+
+.fa-ic { 
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  font-size: 25px;
+}
+
+.container input:hover{
+  text-indent: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.container input:focus{
+  text-indent: 0px;
+  width: 85%;
+  color: black;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.container input::placeholder {
+        color: rgb(92, 83, 83);
+        
+    transition-duration: 0.25s;
 	}
 
-	100% {
-		font-variation-settings: "wght" 700;
+.container input:focus::placeholder {
+		color: rgba(180, 147, 147, 0.555);
 	}
+
+.a-link a {
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 300;
+  -webkit-transition-duration: 0.20s;
 }
 
-// Toggle Button for animation
-$body-color: black;
-$text-color: $orange;
-
-.controls {
-	position: absoute;
-	bottom: 15px;
-    left: 50%;
-    padding-top: 45px;
-	transform: translateX(-50%);
-	width: 190px;
-	z-index: 100;
-	display: block;
+.a-link a:hover {
+  line-height: 1.5;
+  font-weight: 300;
+  color: black;
+  text-shadow: 1px 1px 4px black;
 }
 
-.button {
-	position: relative;
-    border: 5px solid $text-color;
-	padding: 15px;
-	color: red;
-	background: $body-color;
-	color: black;
-	font-size: 50px;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: yellow;
-	font-size: 50px;
-	text-transform: uppercase;
-	font-weight: 700;
-	width: 100%;
-	font-family: "Courier";
-	cursor: pointer;
-	letter-spacing: 0.0625rem;
-	transition: all 250ms ease;
+.container button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 3px;
+    width: 250px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    background-color: #8b94a1;
+    border-color: #10707f;
+    border-radius: 3px;
+    width: 90%;
+    height: 40px;
+}
 
-	&:hover {
-		background: $orange;
-		color: black;
-		text-decoration: black wavy underline;
-	}
+.container button:hover {
+  background-color: #7697c9;
+  border-color: #10707f;
+  box-shadow: 0 0 0 2px rgba(0,92,230,.5);
+}
 
-	&:focus {
-		transform: translate(0, 5px);
-		background: black;
-		color: $orange;
-		outline: none;
-	}
+.container button:focus {
+  width: 85%;
+  background-color: #0052cc;
+  border-color: #10707f;
+}
+
+.footer{
+  text-decoration: none;
+  position: absolute; 
+  display: block;
+  color: white;
+  right: 0;
+  bottom: 0;
+  font-size: 11px;
+  float: right;
+}
+
+.footer a{
+  color: white;
+}
+
+.l3lackMegas{
+  text-decoration: none;
+  position: absolute; 
+  display: block;
+  color: white;
+  left: 0;
+  bottom: 0;
+  font-size: 13px;
+  float: left;
+  transition-duration: 0.5s;
+}
+
+.l3lackMegas a{
+  color: white;
+}
+
+.l3lackMegas, .footer{
+  color: white;
+  transition-duration: 0.5s;
+}
+.l3lackMegas:hover,  .footer:hover{
+  color: yellow;
+  font-size: 15px;
+  text-shadow: 2px 2px 10px white;
+}
+
+@keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* Firefox */
+        @-moz-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* Safari and Chrome */
+        @-webkit-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* Internet Explorer */
+        @-ms-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }​
+
+        /* Opera */
+        @-o-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }​
+
+@keyframes bg-fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* Firefox */
+        @-moz-keyframes bg-fadein {
+            from { opacity: 0; }
+            to   { opacity: 0.5; }
+        }
+
+        /* Safari and Chrome */
+        @-webkit-keyframes bg-fadein {
+            from { opacity: 0; }
+            to   { opacity: 0.5; }
+        }
+
+        /* Internet Explorer */
+        @-ms-keyframes bg-fadein {
+            from { opacity: 0; }
+            to   { opacity: 0.5; }
+        }​
+
+        /* Opera */
+        @-o-keyframes bg-fadein {
+            from { opacity: 0; }
+            to   { opacity: 0.5; }
+        }​
+
+@keyframes op {
+            from { background-color: #fff; }
+            to   { background-color: #0c0a1e; }
+        }
+
+        /* Firefox */
+        @-moz-keyframes op {
+            from { background-color: #fff; }
+            to   { background-color: #0c0a1e; }
+        }
+
+        /* Safari and Chrome */
+        @-webkit-keyframes op {
+            from { background-color: #fff; }
+            to   { background-color: #0c0a1e; }
+        }
+
+        /* Internet Explorer */
+        @-ms-keyframes op {
+            from { background-color: #fff; }
+            to   { background-color: #0c0a1e; }
+        }​
+
+        /* Opera */
+        @-o-keyframes op {
+            from { background-color: #fff; }
+            to   { background-color: #0c0a1e; }
+        }
+        
+li.a {
+  outline: 0;
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -moz-animation: fadein 2s; /* Firefox */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera */
+  /* border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2); */
+  position: relative;
+  width: 80%;
+  bottom: 2px;
+  top: 2px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  /* margin: 0 auto 10px auto; */
+  font-size: 18px;
+  color: #fff 
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  font-weight: 300;
+  
+  border-radius: 5px;
+  width: 300px;
+  text-indent: 0px;
+}
+
+li.b {
+  outline: 0;
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -moz-animation: fadein 2s; /* Firefox */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera */
+  /* border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2); */
+  position: relative;
+  width: 80%;
+  bottom: 2px;
+  top: 2px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  /* margin: 0 auto 10px auto; */
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.3); 
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  font-weight: 300;
+  
+  border-radius: 5px;
+  width: 300px;
+  text-indent: 0px;
+}
+
+li.c {
+  outline: 0;
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -moz-animation: fadein 2s; /* Firefox */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera */
+  /* border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2); */
+  position: relative;
+  width: 80%;
+  border-radius: 5px;
+  top: 2px;
+  bottom: 2px;
+  padding: 10px 15px;
+  /* margin: 0 auto 10px auto; */
+  font-size: 18px;
+  /* color: rgba(218, 29, 29, 0.3);  */
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  font-weight: 300;
+  
+  border-radius: 5px;
+  width: 300px;
+  text-indent: 0px;
+}
+
+li:hover {
+  line-height: 1.5;
+  font-weight: 300;
+  color: black;
+  text-shadow: 1px 1px 4px black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Let's style the wrapper in such away that, 
+it should always be at the center of the browser */
+.wrapper {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+}
+
+/* Style the Un-order list by setting its list-style to none */
+.wrapper ul {
+  list-style: none;
+}
+
+/* Style the list items inside the UL list, by setting its width, height and line-height 
+  and float them to left and set its border and border-radius.
+ */
+.wrapper ul li {
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  margin: 0 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 5px solid #D8E2DC;
+  float: left;
+  transition: all 0.5s ease;
+}
+
+/* Style the icons by setting its color and margin-top value to 20px 
+to align it properly */
+.wrapper ul li .fa {
+  color: #D8E2DC;
+  margin-top: 20px;
+  transition: all 0.5s ease;
+}
+
+/* Now target the specific li classes for styling and use box-shadow effect to border and text-shadow effect
+  to icons for glowing effect and use transition property for smooth transition effect. */
+/*facebook*/
+.wrapper ul li:hover.facebook {
+  border: 5px solid #3b5998;
+  box-shadow: 0 0 15px #3b5998;
+  transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-facebook {
+  color: #3b5998;
+  text-shadow: 0 0 15px #3b5998;
+  transition: all 0.5s ease;
+}
+
+/*twitter*/
+.wrapper ul li:hover.twitter {
+  border: 5px solid #00aced;
+  box-shadow: 0 0 15px #00aced;
+  transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-twitter {
+  color: #00aced;
+  text-shadow: 0 0 15px #00aced;
+  transition: all 0.5s ease;
+}
+
+/* instagram */
+.wrapper ul li:hover.instagram {
+  border: 5px solid #bc2a8d;
+  box-shadow: 0 0 15px #bc2a8d;
+  transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-instagram {
+  color: #bc2a8d;
+  text-shadow: 0 0 15px #bc2a8d;
+  transition: all 0.5s ease;
+}
+
+/* google */
+.wrapper ul li:hover.google {
+  border: 5px solid #dd4b39;
+  box-shadow: 0 0 15px #dd4b39;
+  transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-google {
+  color: #dd4b39;
+  text-shadow: 0 0 15px #dd4b39;
+  transition: all 0.5s ease;
+}
+
+/* whatsapp */
+.wrapper ul li:hover.whatsapp {
+  border: 5px solid #4dc247;
+  box-shadow: 0 0 15px #4dc247;
+  transition: all 0.5s ease;
+}
+
+.wrapper ul li:hover .fa-whatsapp {
+  color: #4dc247;
+  text-shadow: 0 0 15px #4dc247;
+  transition: all 0.5s ease;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 640px){
+  .wrapper {
+      width: 350px;
+  }
+  .wrapper ul li{
+      margin-top: 10px;
+  }
+  .wrapper ul li.google{
+      margin-left: 60px;
+  }
+}
+
+
+@media screen and (max-width: 340px){
+  .wrapper {
+      width: 150px;
+  }
+  .wrapper ul li{
+      margin:15px;
+  }
+  .wrapper ul li.google{
+      margin-left: 15px;
+  }
+}
+
+.footer ul li {
+  display: inline;
+  float: left;
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  margin: 0 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 5px solid #D8E2DC;
+  float: left;
+  transition: all 0.5s ease;
+}
+
+.footer ul li .fa{ 
+  color: #D8E2DC;
+  margin-top: 15px;
+  transition: all 0.5s ease;
+}
+
+.footer ul li:hover {
+  border: 5px solid #dd4b39;
+  
+  
 }
